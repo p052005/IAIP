@@ -1,0 +1,49 @@
+.orbit::before {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 12px rgba(103, 232, 249, 0.8);
+  content: "";
+}
+
+.orbit-one {
+  animation: orbit-spin 24s linear infinite;
+}
+
+.orbit-two {
+  animation: orbit-spin 18s linear infinite reverse;
+}
+
+.profile-card {
+  animation: card-wave 5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes card-wave {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-7px) rotate(1deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-one,
+  .orbit-two,
+  .profile-card {
+    animation: none;
+  }
+}
